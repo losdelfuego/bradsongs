@@ -209,7 +209,7 @@ iframe {
 
 /*PLAYER STUFF*/
 
-/* iframe { display: none; } */
+iframe { display: none; }
 
 .player {
   cursor: pointer;
