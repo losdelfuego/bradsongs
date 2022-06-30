@@ -1,4 +1,4 @@
 var config = {
-  airtablekey : 'keyqBoU4hbC3lekQe',
+  airtablekey : 'keyZ5ixWh8VGnbyu6',
   dbkey : 'appL3FuQ8BfpbKcsB',
 }
