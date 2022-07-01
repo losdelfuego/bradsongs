@@ -1,5 +1,28 @@
+
+
+.moreinfo {
+	display: none;
+	font-size: .9vw;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.external-link {
+	margin-left: .7em;
+}
+
 .list-group > .list-group > .list-group-item {
 	padding-left: 60px;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.songinfo {
+	font-size: .9vw;
+	font-weight: normal;
+	font-style: normal;
 }
 
 /*PLAYER STUFF*/
