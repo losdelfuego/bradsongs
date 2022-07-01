@@ -36,7 +36,7 @@
 <div class="data">
 	<div class="container">
 		<div class="search">
-			<div id="firstlist" class="list-group">
+			<div id="firstlist" class="accordion">
 			</div>
 		</div>
 	</div>
@@ -137,14 +137,14 @@ $('#byprompt').click(function() {
 
 			//write prompts into html
 			if (type == 'link') {
-				$('#firstlist').append('<a href="#' + record.id + '" class="list-group-item" data-bs-toggle="collapse"><h4><i class="bi bi-arrow-right-circle-fill"></i><span class="link">' + prompt + '</span><span onclick="window.open(\'' + url + '\', \'_blank\');"><i class="bi bi-box-arrow-up-right"></i></span></h4><p class="moreinfo">Prompt by ' + promptby + ' on ' + promptdate + '</p></a><ul class="list-group secondlist collapse" id="' + record.id + '"></ul>');
+				$('#firstlist').append('<a href="#' + record.id + '" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#' + record.id + '"><h4><i class="bi bi-arrow-right-circle-fill"></i></i><span class="link">' + prompt + '</span><span onclick="window.open(\'' + url + '\', \'_blank\');"><i class="bi bi-box-arrow-up-right"></i></span></h4><p class="moreinfo">Prompt by ' + promptby + ' on ' + promptdate + '</p></a><ul class="accordion-collapse list-group secondlist collapse" id="' + record.id + '" data-bs-parent="#firstlist"></ul>');
 			}
 			else if ( type == 'image' ) {
 				var promptlong = prompt.replace('small','large');
-				$('#firstlist').append('<a href="#' + record.id + '" class="list-group-item" data-bs-toggle="collapse"><h4><i class="bi bi-arrow-right-circle-fill"></i><img src="' + prompt + '" data-src="' + promptlong + '"   ></h4><p class="moreinfo">Prompt by ' + promptby + ' on ' + promptdate + '</p></a><ul class="list-group secondlist collapse" id="' + record.id + '"></ul>');
+				$('#firstlist').append('<a href="#' + record.id + '" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#' + record.id + '"><h4><i class="bi bi-arrow-right-circle-fill"></i></i><img src="' + prompt + '" data-src="' + promptlong + '"   ></h4><p class="moreinfo">Prompt by ' + promptby + ' on ' + promptdate + '</p></a><ul class="accordion-collapse list-group secondlist collapse" id="' + record.id + '" data-bs-parent="#firstlist"></ul>');
 			}
 			else {
-				$('#firstlist').append('<a href="#' + record.id + '" class="list-group-item" data-bs-toggle="collapse"><h4><i class="bi bi-arrow-right-circle-fill"></i><span >' + prompt + '</span></h4><p class="moreinfo">Prompt by ' + promptby + ' on ' + promptdate + '</p></a><ul class="list-group secondlist collapse" id="' + record.id + '"></ul>');
+				$('#firstlist').append('<a href="#' + record.id + '" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#' + record.id + '"><h4><i class="bi bi-arrow-right-circle-fill"></i></i><span >' + prompt + '</span></h4><p class="moreinfo">Prompt by ' + promptby + ' on ' + promptdate + '</p></a><ul class="accordion-collapse list-group secondlist collapse" id="' + record.id + '" data-bs-parent="#firstlist"></ul>');
 			}
 
 			//write songs into collapsed lists after each prompt
@@ -200,7 +200,7 @@ $('#byartist').click(function() {
 			var songs = record.get('songs')
 
 			//write artists into html
-			$('#firstlist').append('<a href="#' + record.id + '" class="list-group-item" data-bs-toggle="collapse"><h4><i class="bi bi-arrow-right-circle-fill"></i>' + artist + '</h4></a><ul class="list-group secondlist collapse" id="' + record.id + '"></ul>');
+			$('#firstlist').append('<a href="#' + record.id + '" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#' + record.id + '"><h4><i class="bi bi-arrow-right-circle-fill"></i>' + artist + '</h4></a><ul class="accordion-collapse list-group secondlist collapse" id="' + record.id + '" data-bs-parent="#firstlist"></ul>');
 
 						//write songs into collapsed lists after each prompt
 
