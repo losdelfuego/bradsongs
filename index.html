@@ -60,16 +60,21 @@
 <script>
 var Airtable = require('airtable');
 var base = new Airtable({ apiKey: config.airtablekey }).base(config.dbkey);
-
+var songcount = 0
 //get the counts for the intro page
 
 $( document ).ready(function() {
 
 	//load the song list to count it and replace the footer
 	base('song').select().eachPage(function page(records, fetchNextPage) {
+
+		for(record in records) {
+			songcount ++;
+		}
+
 	    fetchNextPage();
-		var songcount = records.length;
 		$('#songcount').text(songcount);
+
 
 	}, function done(err) {
 	    if (err) { console.error(err); return; }
